@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Velite</title>
+    <style>
+        body {
+            margin: 0;
+            display: grid;
+            min-height: 100vh;
+            grid-template-rows: auto 1fr auto;
+            font-family: "Times New Roman", sans-serif;
+        }
+        body > header {
+            background-color: black;
+            filter: drop-shadow(0 5px 5px black);
+        }
+        body > header > nav {
+            display: grid;
+            grid-auto-flow: column;
+        }
+
+        body > header > nav > a {
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            color: antiquewhite;
+            background-color: darkred;
+        }
+
+        body > header > nav > a:hover {
+            background-color: red;
+        }
+
+        body > main {
+            background: url("Pictures/Military.jpg") center center;
+            background-size: cover;
+        }
+
+        body > main > div > div > p {
+            font-size: 20px;
+        }
+
+        body > footer {
+            padding: 10px;
+            display: grid;
+            grid-gap: 20px;
+            grid-auto-flow: column;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 10px ;
+        }
+
+        .overskrift {
+            text-align: center;
+            font-size: 40px;
+            color: antiquewhite;
+        }
+
+        .aktiv {
+            background-color: #dd2c00;
+        }
+
+        .innhold {
+            padding: 10px;
+        }
+
+        #kolonne {
+            max-width: 850px;
+            min-width: 600px;
+            margin: 0 auto;
+            height: 100%;
+            text-align: left;
+            background: rgba(300, 300, 300, 0.75)
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="Index.html">HOME</a>
+            <a href="Velite.html" class="aktiv">VELITE</a>
+            <a href="Hastati.html">HASTATI</a>
+            <a href="Principes.html">PRINCIPES</a>
+            <a href="Triarii.html">TRIARII</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="overskrift">V E L I T E</h1>
+        <div id="kolonne">
+             <div class="innhold">
+                 <h2>Combat Role</h2>
+                 <p><img align="left" src="Pictures/Velite.png"> Velites were a class of infantry in the Roman army of the mid-Republic from 211 to 107 BC. Velites were light infantry and skirmishers who were armed with a number of javlins with a narrow metal point to fling at the enemy. They also carried short thrusting swords, or gladii, for use in melee. They rarely wore armour as they were the youngest and poorest soldiers in the legion and could not afford much equipment. They did carry small wooden shields called parma for protection though, and wore a headdress made from wolf skin so their brave deeds could be recognized.The velites were placed at the front partly for tactical reasons, and also so that they had the opportunity to secure glory for themselves in single combat.</p>
+                 <p> They were typically used as a screening force, driving off enemy skirmishers and disrupting enemy formations with javelin throws before retiring behind the lines to allow the heavier-armed hastati to attack. They were normally the ones who engaged war elephants and chariots if they were present on the field. Their high mobility and ranged weaponry made them much more effective against these enemies than heavy infantry.</p>
+                 <p>Velites were the youngest and usually the poorest soldiers in the legion, and could rarely afford much equipment. They were armed with light javelins with tips designed to bend on impact to prevent them being thrown back, similar to the heavier pila of other legionaries. Livy says that they each carried seven javelins, however Roman satirist Lucilius says that they carried five, suggesting that the amount of javlins may have varied.</p>
+                 <p>They also carried darts, 30cm long, which also had a tip that was designed to bend on impact. Velites had a relatively short thrusting swords, 74 centimetres in length, as backup weapons. They fought in a very loose, staggered formation like most irregular troops, and carried small round shields called parma, 90 cm in diameter. The velites were placed at the front of the army, so that the velites had the chance to prove themselves and win glory by seeking out single combat with an enemy. This is also why they wore highly identifiable wolfskin headdresses</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <article>
+            <p align="left">Contact us at through e-mail: E-mail@mail.com</p>
+            <p align="left">or tlf: 123 45 678</p>
+        </article>
+        <article>
+            <p align="right">All rights reserved.</p>
+        </article>
+    </footer>
+
+</body>
+</html>
