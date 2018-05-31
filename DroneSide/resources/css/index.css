@@ -13,6 +13,6 @@ main {
     margin: auto;
 }
 
-main > div { 
+main > div {
     margin: 0 8px;
 }

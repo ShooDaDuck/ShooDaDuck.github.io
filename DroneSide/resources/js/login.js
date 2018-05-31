@@ -1,4 +1,4 @@
-// 
+//
 let loginBox = $("#login-box");
 let registerBox = $("#register-box");
 let forgotBox = $("#forgot-box");
@@ -81,9 +81,9 @@ function register() {
     firebase.auth().createUserWithEmailAndPassword(email, password).then(user => {
         firebase.auth().currentUser.updateProfile({
             displayName: username
-          }).then(function() {
+        }).then(function() {
             redirect();
-          }).catch(function(error) {
+        }).catch(function(error) {
             // An error happened.
         });
     }).catch(err => {

@@ -6,7 +6,7 @@ let placeHolderImage = 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_i
 let ref = firebase.database().ref('items').orderByKey();
 ref.on('child_added', function(data) {
     var item = data.val();
-    
+
     let itemTemplate = `
         <div class="item">
             <h3>${item.name}</h3>
