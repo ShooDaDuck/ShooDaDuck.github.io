@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Logg inn</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<main>
+    <img id="logo" src="../drone/resources/img/logo.png"/>
+    <div id="login-box" class="content-box">
+        <h3 class="title">Logg inn</h3>
+        <input id="email" type="email" placeholder="E-post" autocomplete="email" onkeypress="searchKeyPress(event)">
+        <input id="password" type="password" placeholder="Passord" autocomplete="password" onkeypress="searchKeyPress(event)">
+        <div class="buttons-box">
+            <button id="login-btn" class="green-btn" onclick="signIn()">Bekreft</button>
+            <button id="register-btn" class="hidden-btn" onclick="showRegistration()">Registrer</button>
+        </div>
+    </div>
+    <div id="forgotPass">
+        <p>Har du glemt passordet?</p>
+        <a href="#" onclick="showForgot()">Klikk her</a>
+    </div>
+    <div id="register-box" class="content-box">
+        <h3 class="title">Registrer</h3>
+        <input id="regEmail" type="email" placeholder="E-post" autocomplete="email" onkeypress="searchKeyPress(event, true)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+        <input id="regName" type="text" placeholder="Navn" autocomplete="username" onkeypress="searchKeyPress(event, true)" pattern="^[a-zA-Z0-9 _-]+" minlength="3" maxlength="50">
+        <input id="regPassword" type="password" placeholder="Passord" autocomplete="password" onkeypress="searchKeyPress(event, true)" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        <div class="buttons-box">
+            <button id="confirmRegistration-btn" class="green-btn" onclick="register()">Registrer</button>
+            <button id="back-btn" class="hidden-btn" onclick="backToLogin()">Tilbake</button>
+        </div>
+    </div>
+    <div id="forgot-box" class="content-box">
+        <h3 class="title">Glemt passord</h3>
+        <input id="forgotEmail" type="email" placeholder="E-post" autocomplete="email" onkeypress="searchKeyPress(event, true)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+        <div class="buttons-box">
+            <button id="sendEmail" class="green-btn" onclick="sendForgotEmail()">Send E-post</button>
+            <button class="hidden-btn" onclick="backToLogin()">Tilbake</button>
+        </div>
+    </div>
+</main>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBDT8_t-c9UwKpAnlrsraOLUdg-CHg-M-8",
+        authDomain: "dronebuttik.firebaseapp.com",
+        databaseURL: "https://dronebuttik.firebaseio.com",
+        projectId: "dronebuttik",
+        storageBucket: "dronebuttik.appspot.com",
+        messagingSenderId: "103498386122"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="resources/js/login.js"></script>
+</body>
+</html>
