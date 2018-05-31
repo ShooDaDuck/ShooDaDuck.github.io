@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Produkter</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/shared.css">
+    <link rel="stylesheet" href="resources/css/store.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="resources/img/bannerLogo.png" alt="Hjem">
+        </a>  
+    </header>
+    <main>
+        <div id="left">
+            <div id="info">
+                Bestillinger må hentes i butikk hvis utenfor dronerekkeviddet.
+            </div>
+            <div id="ad">
+                <img src="http://www.robseide.com/images/previews/animated_gif/ad_knees_runnersworld_vertical.gif" alt="">  
+            </div> 
+        </div>
+        <div id="itemsGrid" onclick="sortByGrid()"></div>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBDT8_t-c9UwKpAnlrsraOLUdg-CHg-M-8",
+            authDomain: "dronebuttik.firebaseapp.com",
+            databaseURL: "https://dronebuttik.firebaseio.com",
+            projectId: "dronebuttik",
+            storageBucket: "dronebuttik.appspot.com",
+            messagingSenderId: "103498386122"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="resources/js/store.js"></script>
+</body>
+</html>

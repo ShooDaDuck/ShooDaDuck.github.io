@@ -1,0 +1,84 @@
+button {
+    padding: 8px 16px;
+}
+
+p {
+    display: inline-block;
+    font-size: smaller;
+}
+
+a {
+    color: #2f8fc5;
+    text-align: right;
+    font-size: smaller;
+}
+
+a:hover {
+    color: darkslategrey;
+}
+
+img {
+    width: auto;
+}
+
+input {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 16px;
+    padding-left: 4px;
+    font-size: medium;
+}
+
+main, #login-box, #register-box{
+    margin: auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+#logo {
+    margin: 16px;
+}
+
+#register-box, #forgot-box {
+    display: none;
+}
+
+#forgotPass {
+    margin: auto;
+    max-width: 432px;
+}
+
+.content-box {
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.buttons-box {
+    text-align: left;
+    padding: 0 16px;
+}
+
+.title {
+    margin: 16px;
+    color: #757575;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+}
+
+@media screen and (max-height: 653px) {
+    main {
+        padding: 16px;
+    }
+}
+
+@media screen and (max-height: 522px) {
+    img {
+        display: none;
+    }
+
+    main {
+        margin-top: 7%;
+    }
+}
