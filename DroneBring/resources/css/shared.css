@@ -45,7 +45,7 @@ header * {
     width: auto;
 }
 
-header > #loginBtn {
+header > button {
     float: right;
     height: 100%;
     border: none;
