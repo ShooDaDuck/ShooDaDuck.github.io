@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sanger</title>
+</head>
+<body>
+
+    <script>
+
+        const len1 = 146;
+        const len2 = 74;
+        let gucci = "gucci gang<br>";
+        let chain = "<p>spend three racks on new chains</p>";
+
+        let vers1 = "<p>A well a everybody's heard about the bird <br> B-b-b bird, bird, bird, b-bird's the word</p>";
+        let vers2 = "<p>A well a don't you know about the bird? <br> Well, everybody knows that the bird is the word!</p>";
+        let vers3 = "<p>Surfin' bird  <br> B-b-b aah, aah!</p>";
+        let refreng1 = "A well a bird, bird, bird, the bird is the word<br>";
+        let refreng2 = "A well a bird, bird, bird, well the bird is the word<br>";
+
+        document.write("<h1>Around the world</h1>");
+        for(let i = 0; i < len1; i++){
+            document.write("Around the world, around the world <br>")
+        }
+
+        document.write("<h1>Gucci Gang</h1>");
+        for(let i= 0; i < len2; i++){
+            for(let i=0; i < 9; i++){
+                document.write(gucci)
+            }
+            for(let i=0; i < 1; i++){
+                document.write(chain)
+            }
+        }
+
+        document.write("<h1>Surfin' bird</h1>");
+        document.write(vers1);
+        for(let i=0; i < 7; i++){
+            if(i%2===0){
+                document.write(refreng1)
+            }
+            else{
+                document.write(refreng2)
+            }
+        }
+        document.write(vers2);
+        for(let i=0; i < 7; i++){
+            if(i%2===0){
+                document.write(refreng1)
+            }
+            else{
+                document.write(refreng2)
+            }
+        }
+        document.write(vers3)
+
+    </script>
+
+</body>
+</html>

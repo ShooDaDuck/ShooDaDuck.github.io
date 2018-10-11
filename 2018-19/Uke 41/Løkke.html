@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Løkke</title>
+    </head>
+    <body>
+
+        <p id="out"></p>
+
+        <canvas id="lines" width="500px" height="300px"></canvas>
+
+        <script>
+
+            let Winner = Math.floor(Math.random()*10+1);
+            const lines = document.getElementById("lines");
+            const ctx = lines.getContext("2d");
+            ctx.strokeStyle = "black" ;
+
+
+
+            for(let number=0; number<101; number++){
+                document.write(`${number}<br>`)
+            }
+
+            while(Winner !==10){
+                let out = document.getElementById("out");
+                if(Winner === 10){
+                    out.innerHTML = "You WON"
+                }
+                else {
+                    out.innerHTML = "You Lost"
+                }
+                console.log(Winner);
+                Winner = Math.floor(Math.random()*10+1);
+            }
+            let i = 0;
+            while(i<300){
+                moveTo(0,i);
+                ctx.lineTo(300,i);
+                ctx.stroke();
+                i+=2;
+            }
+
+        </script>
+
+    </body>
+</html>
