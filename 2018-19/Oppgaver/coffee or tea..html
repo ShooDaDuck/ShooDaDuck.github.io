@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>coffe or tea</title>
+    <style>
+        #collum {
+            display: grid;
+            grid-template-columns:repeat(2,1fr);
+        }
+
+
+    </style>
+
+</head>
+    <body>
+        <h1>Coffee or tea</h1>
+        <div id="collum">
+            <div id="selector">
+                <input id="coffee" type="checkbox" placeholder="">
+                <input id="tea" type="checkbox" placeholder="">
+                <input id="biscuit" type="checkbox" placeholder="">
+                <input id="doghnut" type="checkbox" placeholder="">
+            </div>
+            <div>
+                <h2>Your order</h2>
+                <ul id="order"></ul>
+            </div>
+        </div>
+        <script>
+            const coffee = document.getElementById("coffee");
+            const tea = document.getElementById("tea");
+            const biscuit = document.getElementById("biscuit");
+            const doughnut = document.getElementById("doughnut");
+
+            let order = document.getElementById("order");
+
+            let itemlist = [];
+
+
+            function removeitem (item) {
+                for (let i=0; i<itemlist.length;i++){
+                    if(itemlist[i] == item){
+                        itemlist.splice(i,1);
+                    }
+                }
+            }
+
+            function displayitem() {
+                order.innerHTML = "";
+                for (let i=0; i<itemlist.length;i++){
+
+                }
+            }
+
+            coffee.onchange = function () {
+                if (coffee.checked) itemlist.push("Coffee");
+                else removeitem("Coffee");
+
+            };
+            tea.onclick = function () {
+                if (coffee.checked) itemlist.push("Tea");
+                else removeitem("Tea");
+            };
+            biscuit.onclick = function () {
+                if (coffee.checked) itemlist.push("Biscuit");
+                else removeitem("Biscuit");
+            };
+            doughnut.onclick = function () {
+                if (coffee.checked) itemlist.push("Doughnut");
+                else removeitem("Doughnut");
+            }
+
+        </script>
+    </body>
+</html>
