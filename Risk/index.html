@@ -3,50 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Risk</title>
-    <style>
-
-        #topbar {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-        }
-
-        div {
-            text-align: center;
-            Border: solid black 3px;
-        }
-
-    </style>
+    <LINK REL=StyleSheet HREF="indexCSS.css" TYPE="text/css" MEDIA=screen>
 </head>
 <body>
-    <section id="topbar">
+
+    <section id="topBar">
         <div>
-            <img src="Pic/Risk%20Logo.jpg">
+            <img src="Pic/Risk%20Logo.png" id="logo">
         </div>
-        <div>
-            <h2>Player 1</h2>
+        <div class="playerBar">
+            <h2 class="player" style="background-color: blue">
+                Player 1
+            </h2>
         </div>
-        <div>
-            <h2>Player 2</h2>
+        <div class="playerBar">
+            <h2 class="player" style="background-color: red">
+                Player 2
+            </h2>
         </div>
     </section>
+    <div>
+        <img src="Pic/kart.png" id="background">
+        <img src="Pic/Europaa.png" id="eu" class="map">
+        <img src="Pic/Nord-Amerika.png" id="na" class="map">
+        <img src="Pic/Osianiaa.png" id="oa" class="map">
+        <img src="Pic/Sør-Amerika.png" id="sa" class="map">
+        <img src="Pic/Afrikaa.png" id="af" class="map">
+        <img src="Pic/Asiaa.png" id="asi" class="map">
+    </div>
+    <div id="divBtn">
+        <button id="btnEnd">End Turn</button>
+    </div>
 
+    <script src="indexJS.js"></script>
 
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
-    <script>
-
-
-        function setup() {
-
-        }
-        function draw(123) {
-            
-        }
-        
-
-        
-    </script>
 </body>
 </html>

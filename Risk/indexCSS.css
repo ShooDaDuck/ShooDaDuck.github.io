@@ -1,0 +1,40 @@
+body {
+    background-color: darkkhaki;
+}
+.playerBar {
+    padding-top: 43px;
+}
+.player {
+    font-family: "Times New Roman", sans-serif;
+    text-align: center;
+    Border: solid black 3px;
+}
+.map {
+    padding-left: 17%;
+    width: 66%;
+    position: absolute;
+    z-index: 2;
+}
+#background {
+    padding-left: 17%;
+    position: absolute;
+    width: 66%;
+    z-index: 1;
+}
+#topBar {
+    display: grid;
+    padding-right: 10%;
+    padding-left: 10%;
+    grid-template-columns:repeat(1,300px) repeat(2,1fr);
+
+}
+#logo {
+    height: 100px;
+}
+#divBtn {
+    padding-left: 17%;
+    padding-bottom: 5%;
+    position: absolute;
+}
+
+
