@@ -11,15 +11,13 @@ body {
 }
 .map {
     padding-left: 17%;
-    width: 66%;
     position: absolute;
-    z-index: 2;
+    width: 66%;
 }
 #background {
     padding-left: 17%;
-    position: absolute;
     width: 66%;
-    z-index: 1;
+    position: absolute;
 }
 #topBar {
     display: grid;
@@ -32,9 +30,12 @@ body {
     height: 100px;
 }
 #divBtn {
+    padding-top: 43%;
     padding-left: 17%;
     padding-bottom: 5%;
     position: absolute;
+    z-index: 1;
 }
+
 
 
