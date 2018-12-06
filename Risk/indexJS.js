@@ -20,7 +20,6 @@ let asi        = "89db8cff";
 
 
 
-
 function numbtohex(rgb) {
     let hex = Number(rgb).toString(16);
 
@@ -29,7 +28,7 @@ function numbtohex(rgb) {
     }
     return hex;
 }
-maps.onclick = function(event) {
+maps.onclick = function (event) {
 
     html2canvas(document.body).then(function (canvas) {
         const ctx = canvas.getContext('2d');
@@ -40,45 +39,10 @@ maps.onclick = function(event) {
         let gHex = numbtohex(p[1]);
         let bHex = numbtohex(p[2]);
         let aHex = numbtohex(p[3]);
-        let rgbaHex = rHex + gHex + bHex + aHex;
-        console.log(rgbaHex);
+        let rgbaHex1 = rHex + gHex + bHex + aHex;
+        console.log(rgbaHex1);
 
-        if (rgbaHex === eu){
-            console.log("Europa");
-            maps.onclick.then = function () {
-                if (rgbaHex === asi){
-                    console.log("eu-asi")
-                }
-                else if (rgbaHex === oa){
-                    console.log("eu-oa")
-                }
-                else if (rgbaHex === na){
-                    console.log("eu-na")
-                }
-                else if (rgbaHex === sa){
-                    console.log("eu-sa")
-                }
-                else if (rgbaHex === af){
-                    console.log("eu-af")
-                }
-            }
-        }
-        else if (rgbaHex === asi){
-            console.log("Asia")
-        }
-        else if (rgbaHex === oa){
-            console.log("Oceania")
-        }
-        else if (rgbaHex === na){
-            console.log("North America")
-        }
-        else if (rgbaHex === sa){
-            console.log("South America")
-        }
-        else if (rgbaHex === af){
-            console.log("Africa")
-        }
-    });
+    })};
 
 
 
@@ -95,8 +59,8 @@ maps.onclick = function(event) {
     }
     else {
         alert("Unrecable province")
-    }*/
-}/*
+    }
+});   /*
 na.onclick = function () {
     console.log("na");
     if (eu.onclick) {
@@ -186,6 +150,18 @@ function moveToAsi() {
 function moveToSa() {
 
 }
+*/
+let btnAttackR = document.getElementById("btnAttackR");
+let btnAttackB = document.getElementById("btnAttackB");
+let btlout = document.getElementById("btlout");
+
+
+btnAttackB.onclick = function () {
+    bAttack()
+};
+btnAttackR.onclick = function () {
+    rAttack()
+};
 
 
 function bAttack() {
@@ -194,11 +170,13 @@ function bAttack() {
 
     if (b > r) {
         //Blue wins
-        console.log("B-W")
+        console.log("B-W");
+        btlout.innerHTML += "Blue wins, "
     }
     else if (b <= r) {
         //Blue loses
-        console.log("B-L")
+        console.log("B-L");
+        btlout.innerHTML += "Blue lost, "
     }
 }
 
@@ -208,11 +186,13 @@ function rAttack() {
 
     if (b < r) {
         //Red wins
-        console.log("R-W")
+        console.log("R-W");
+        btlout.innerHTML += "Red wins, "
     }
     else if (b >= r) {
         //Red loses
-        console.log("R-L")
+        console.log("R-L");
+        btlout.innerHTML += "Red lost, "
     }
 }
-*/
+
