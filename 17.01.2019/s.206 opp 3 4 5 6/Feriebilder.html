@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feriebilder</title>
+</head>
+<body>
+<div>
+    <h2>Feriebilder</h2>
+    <div style="height: 500px; width: 100px" >
+        <img id="show" src="black-rhino.jpg">
+    </div>
+    <button id="pre">Forrige</button>
+    <button id="nex">Neste</button>
+
+    <input type="text" placeholder="gres" id="inp">
+
+    <select id="sel" title="Best">
+        <option value="EY">EY</option>
+        <option value="OH">OH</option>
+    </select>
+    <button id="btn">ya</button>
+
+
+    <script>
+
+
+
+        let feriebilder = ["Fish Jesus.png","black-rhino.jpg", "kkk.jpg", "kart.png","lmo2.jpg","yt.jpg"];
+
+        let tall = [1,23,43,21,33,14,3,2,5,78,7,2];
+        let inpOrSelect = [];
+
+        let show = document.getElementById("show");
+        const pre = document.getElementById("pre");
+        const nex = document.getElementById("nex");
+        const btn = document.getElementById("btn");
+        let inp = document.getElementById("inp");
+        let n = 0;
+
+        btn.onclick = function () {
+            inpOrSelect.push(inp.value);
+            if (sel.value === "EY"){
+                inpOrSelect.push("EY")
+            }
+            else if (sel.value === "OH"){
+                inpOrSelect.push("OH")
+            }
+            console.log(inpOrSelect)
+        };
+
+        tall.sort(function (a,b) {return a-b;});
+
+        console.log(tall);
+
+        feriebilder.sort(function(a,b) {
+            a = a.toLowerCase();
+            b = b.toLowerCase();
+            return a < b
+        });
+        console.log(feriebilder);
+
+        nex.onclick = function(){
+            n++;
+            if (n >= feriebilder.length){
+                n = 0;
+            }
+            show.src = feriebilder[n];
+        };
+        pre.onclick = function(){
+            n--;
+            if (n<0){
+                n = feriebilder.length - 1
+            }
+            show.src = feriebilder[n];
+        };
+    </script>
+</div>
+</body>
+</html>
