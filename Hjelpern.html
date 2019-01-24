@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeg trenger hjelp</title>
+    <style>
+        #prb {
+            border-radius: 3%;
+            height:100px;
+            width: 800px;
+            font-size: 50px;
+            font-family: sans-serif Arial comic-sanse;
+        }
+        #nvn {
+            border-radius: 3%;
+            height:100px;
+            width: 800px;
+            font-size: 50px;
+            font-family: sans-serif Arial comic-sanse;
+        }
+        #sub {
+            border-radius: 3%;
+            height:100px;
+            width: 800px;
+            font-size: 50px;
+            font-family: sans-serif Arial comic-sanse;
+        }
+    </style>
+</head>
+<body>
+
+    <input placeholder="Skriv inn navnet ditt her" id="nvn">
+    <br>
+    <input placeholder="Skriv inn problemet ditt her" id="prb">
+    <br>
+    <button id="sub">Submit</button>
+    <br>
+    <div id="out">
+
+    </div>
+
+    <script>
+        const sub = document.getElementById("sub");
+
+        let nvn = document.getElementById("nvn");
+        let prb = document.getElementById("prb");
+        let out = document.getElementById("out");
+
+        sub.onclick = function () {
+            if (nvn.value !== "" && prb.value !== ""){
+                out.innerHTML += "   Person: " + nvn.value + ".   Trenger hjelp til: " + prb.value + ".   "
+            }
+            console.log(nvn.value);
+            console.log(prb.value);
+        }
+
+    </script>
+
+</body>
+</html>
