@@ -6,6 +6,10 @@
     <title>Title</title>
 
     <style>
+        body {
+            background-image: url("pictures/Background.PNG");
+            background-size: cover;
+        }
         h1{
             left: 500px;
             position: absolute;
@@ -15,7 +19,7 @@
             left: 170px;
             top: 57px;
             font-size: 20px;
-            color: black;
+            color: greenyellow;
         }
         #Beetle {
             position: absolute;
@@ -44,39 +48,38 @@
 
 <audio src="" id="sound"></audio>
 
-<script>
+    <script>
+        const Beetle = document.getElementById("Beetle");
+        const divPoints = document.getElementById("divPoints");
+        const sound = document.getElementById("sound");
+
+        let points = 0;
+        let soundList = ["sounds/2 inch long dude.mp3", "sounds/Beetle juice party.mp3", "sounds/Cant dress like a woman.mp3", "sounds/Do it with a female.mp3", "sounds/Drinking smoking have weed.mp3", "sounds/I was born in 1975.mp3", "sounds/Im a king.mp3", "sounds/Im from Vietnam brotha.mp3", "sounds/My name is Beetlejuice.mp3", "sounds/Wassup honey.mp3"];
+
+        Beetle.onclick = function () {
+            morePoints();
+            poke();
+            beetleSpeak()
+        };
 
 
-    const Beetle = document.getElementById("Beetle");
-    const divPoints = document.getElementById("divPoints");
-    const sound = document.getElementById("sound");
-    let points = 0;
-    let soundList = ["sounds/2 inch long dude.mp3", "sounds/Beetle juice party.mp3", "sounds/Cant dress like a woman.mp3", "sounds/Do it with a female.mp3", "sounds/Drinking smoking have weed.mp3", "sounds/I was born in 1975.mp3", "sounds/Im a king.mp3", "sounds/Im from Vietnam brotha.mp3", "sounds/My name is Beetlejuice.mp3", "sounds/Wassup honey.mp3"];
+        function morePoints() {
+            points += 1;
+            divPoints.innerHTML = "=   " + points;
+        }
+        function poke() {
+            Beetle.src = "pictures/BeetleAngry.png";
+            setTimeout(happy,200);
+        }
+        function happy() {
+            Beetle.src = "pictures/BeetleHappy.png";
+        }
+        function beetleSpeak(){
+            let number = Math.floor(Math.random() * soundList.length);
+            sound.src = soundList[number];
+            sound.play()
+        }
 
-    Beetle.onclick = function () {
-        morePoints();
-        poke();
-        beetleSpeak()
-    };
-
-
-    function morePoints() {
-        points += 1;
-        divPoints.innerHTML = "=   " + points;
-    }
-    function poke() {
-        Beetle.src = "pictures/BeetleAngry.png";
-        setTimeout(happy,200);
-    }
-    function happy() {
-        Beetle.src = "pictures/BeetleHappy.png";
-    }
-    function beetleSpeak(){
-        let number = Math.floor(Math.random() * soundList.length);
-        sound.src = soundList[number];
-        sound.play()
-    }
-
-</script>
+    </script>
 </body>
 </html>
