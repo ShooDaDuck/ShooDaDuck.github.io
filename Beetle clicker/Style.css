@@ -1,0 +1,57 @@
+body {
+    background-image: url("pictures/HowardStern.jpg");
+    background-size: cover;
+    font-family: 'Luckiest Guy', cursive;;
+}
+h1{
+    left: 500px;
+    position: absolute;
+    color: brown;
+}
+#divPoints {
+    position: absolute;
+    left: 170px;
+    top: 57px;
+    font-size: 20px;
+    color: greenyellow;
+}
+#Beetle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 500px;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+}
+#BeetlePoints {
+    position: absolute;
+    left: 10px;
+    height: 115px;
+    width:160px ;
+}
+#upgradesTab {
+    position: absolute;
+    background-color: gray;
+    height: 100%;
+    width: 400px;
+    right: 0;
+    top: 0;
+}
+#bpsOut{
+    position: absolute;
+    left: 500px;
+    top: 50px;
+}
+#video{
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    height: 300px;
+    width: 480px;
+}
+.upgrades {
+    padding-left: 10px;
+    width: 200px;
+    height: 200px;
+}

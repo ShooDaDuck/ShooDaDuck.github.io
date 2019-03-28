@@ -3,83 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
-
-    <style>
-        body {
-            background-image: url("pictures/Background.PNG");
-            background-size: cover;
-        }
-        h1{
-            left: 500px;
-            position: absolute;
-        }
-        #divPoints {
-            position: absolute;
-            left: 170px;
-            top: 57px;
-            font-size: 20px;
-            color: greenyellow;
-        }
-        #Beetle {
-            position: absolute;
-            left: 500px;
-            top: 150px;
-            height: 259px;
-            width: 194px;
-            transition: 0.2s;
-        }
-        #BeetlePoints {
-            position: absolute;
-            left: 10px;
-            height: 115px;
-            width:160px ;
-        }
-    </style>
-
+    <title>Beetlejuice extreme CLIKER. Best cliker game this side og the dimensional plane.</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 </head>
 <body>
-<h1>Poke Beetlejuice for beetles</h1>
-<img src="pictures/BeetlePoints.png" id="BeetlePoints">
+    <h1>Poke Beetlejuice for Beetle Points</h1>
+    <h2 id="bpsOut">BP per second = 0</h2>
+    <img src="pictures/BeetlePoints.png" id="BeetlePoints">
 
-<div id="divPoints">= 0</div>
+    <div id="divPoints">= 0</div>
 
-<img id="Beetle" src="pictures/BeetleHappy.png">
+    <img id="Beetle" src="pictures/BeetleHappy.png">
 
-<audio src="" id="sound"></audio>
+    <audio src="" id="sound"></audio>
 
-    <script>
-        const Beetle = document.getElementById("Beetle");
-        const divPoints = document.getElementById("divPoints");
-        const sound = document.getElementById("sound");
+    <video controls id="video">
+        <source src="videoplayback.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-        let points = 0;
-        let soundList = ["sounds/2 inch long dude.mp3", "sounds/Beetle juice party.mp3", "sounds/Cant dress like a woman.mp3", "sounds/Do it with a female.mp3", "sounds/Drinking smoking have weed.mp3", "sounds/I was born in 1975.mp3", "sounds/Im a king.mp3", "sounds/Im from Vietnam brotha.mp3", "sounds/My name is Beetlejuice.mp3", "sounds/Wassup honey.mp3"];
+    <div id="upgradesTab">
+        <img src="pictures/PeteDavidson.png" class="upgrades" id="pete">
+        <div class="price" id="peteP">
+            Price = 10
+        </div>
+        <img src="pictures/GarryTheRetard.png" class="upgrades" id="garry">
+        <div class="price" id="garryP">
+            Price = 40
+        </div>
+        <img src="pictures/EricTheActor.png" class="upgrades" id="eric">
+        <div class="price" id="ericP">
+            Price = 149
+        </div>
+        <img src="pictures/KKK.png" class="upgrades" id="kkk">
+        <div class="price" id="kkkP">
+            Price = 1488
+        </div>
+    </div>
 
-        Beetle.onclick = function () {
-            morePoints();
-            poke();
-            beetleSpeak()
-        };
-
-
-        function morePoints() {
-            points += 1;
-            divPoints.innerHTML = "=   " + points;
-        }
-        function poke() {
-            Beetle.src = "pictures/BeetleAngry.png";
-            setTimeout(happy,200);
-        }
-        function happy() {
-            Beetle.src = "pictures/BeetleHappy.png";
-        }
-        function beetleSpeak(){
-            let number = Math.floor(Math.random() * soundList.length);
-            sound.src = soundList[number];
-            sound.play()
-        }
-
-    </script>
+    <script src="Script.js"></script>
 </body>
 </html>
