@@ -1,7 +1,7 @@
 body {
     background-image: url("pictures/HowardStern.jpg");
     background-size: cover;
-    font-family: 'Luckiest Guy', cursive;;
+    font-family: 'Luckiest Guy', cursive;
 }
 h1{
     left: 500px;
@@ -31,12 +31,16 @@ h1{
     width:160px ;
 }
 #upgradesTab {
-    position: absolute;
+    position: fixed;
     background-color: gray;
     height: 100%;
-    width: 400px;
+    width: 0;
     right: 0;
     top: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 1;
+    border-left: black ridge 2px;
 }
 #bpsOut{
     position: absolute;
@@ -50,8 +54,33 @@ h1{
     height: 300px;
     width: 480px;
 }
+#openUpgrades {
+    position: absolute;
+    right: 100px;
+    top: 50px;
+    width: 100px;
+    height: 33px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 18px;
+    border-radius: 10%;
+}
+#exitUpgrades{
+    border-radius: 50%;
+    top: 25px;
+    left: 25px;
+    position: absolute;
+    font-family: 'Luckiest Guy', cursive;
+}
+#pete{
+    padding-top: 50px
+}
 .upgrades {
-    padding-left: 10px;
+    padding-left: 50px;
     width: 200px;
     height: 200px;
+}
+.price {
+    padding-left: 50px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 18px;
 }
