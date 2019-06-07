@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skrått kast</title>
+    <style>
+        body {
+            background-color: #F08010;
+        }
+        canvas {
+            height: 600px;
+            width: 1200px;
+            border: 1px solid black;
+            right: 60px;
+            position: absolute;
+            top: 110px;
+        }
+        .values {
+            font-weight: bolder;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="DNA%20generator.html">DNA-generator</a>
+        <a href="DNA-generator%20flytdiagram.html">DNA-generator flytdiagram</a>
+        <a class="active">Skrått kast</a>
+    </div>
+
+    <div class="i">
+        <h2>Skrått kast</h2>
+        <p>Dette er en apilikasjon som simulerer skrått kast.
+            <br> For å starte fyller du in utskytnings vinkel, fart og gravitasjons-styrken.
+            <br> Vinkelen må være 0-90 grader og farten og gravitasjonen må være positiv.
+            <br> For å utføre kastet press mellomrom.
+        </p>
+        <p class="values">Farten</p>
+        <input type="number" min="0" id="speed" placeholder="Fart">
+        <p class="values">Kast vinkelen</p>
+        <input type="number" min="0" max="90" id="angle" placeholder="Vinkel">
+        <p class="values">Gravitasjonen</p>
+        <input type="number" min="0" id="ya" placeholder="Gravitasjon"> <br>
+        <p id="inf"></p>
+    </div>
+
+    <canvas id="can"> </canvas>
+
+    <script>
+        //html referangser
+        const inf = document.getElementById("inf");
+        const angle = document.getElementById("angle");
+        const speed = document.getElementById("speed");
+        const ya = document.getElementById("ya");
+
+        const can = document.getElementById("can");
+        const ctx = can.getContext("2d");
+
+        //Setter oppløsningen til canvaset
+        can.width = 1200;
+        can.height = 600;
+
+        document.onkeydown = start;
+
+        let ball = {
+            radius:7,
+            xPos: 7,
+            yPos: 593,
+            color: "black",
+            xSpeed: 0,
+            ySpeed: 0,
+            yAcceleration: 0,
+        };
+        let background = {
+            height: can.height,
+            width: can.width,
+            color: "dodgerblue"
+        };
+        function start(evt) {
+            let key = evt.keyCode; // definerer et event basert på keyCode
+            if (ball.yPos === 593 && ball.xPos === 7){ // gjør det kun mulig å føre nytt kast når ballen er i start posisjonen
+                if (key === 32){ // sjekker at spacebar blir presset ut fra keyCode
+                    ball.ySpeed = speed.value * Math.sin(angle.value*Math.PI/180); // regner ut y farten ut fra vinkel og fart
+                    ball.xSpeed = speed.value * Math.cos(angle.value*Math.PI/180); // regner ut x farten ut fra vinkel og fart
+                    ball.yAcceleration = ya.value; // setter y akselerasjonen lik input valuen til ya
+                }
+            }
+        }
+        function draw() {
+            ctx.fillStyle = background.color; // gir farge til bakgrunnen
+            ctx.fillRect(0,0,background.width,background.height);// lager bakgrunnen som en canvas dekkende rektangel
+            ctx.fill(); // fyller bakgrunnen
+            ctx.beginPath(); // starter konstruksjonen av en sirkel
+            ctx.fillStyle = ball.color; // setter fargen til sirkelen
+            ctx.arc(ball.xPos, ball.yPos, ball.radius, 0, Math.PI*2); // konstruerer en sirkel
+            ctx.closePath(); // ender konstruksjonen av en sirkel
+            ctx.fill(); // fyller sirkelen
+            ball.ySpeed -=  ball.yAcceleration / 60; // definerer farten i y retning  med akselerasjon
+            ball.xPos += ball.xSpeed; // gjør at xPos oppdateres basert på xSpeed
+            ball.yPos -= ball.ySpeed ;
+        }
+        function info() {
+            inf.innerHTML = `
+                Fart i x retning = ${Math.floor(ball.xSpeed* 10) / 10}px/s <br>
+                Fart i y retning = ${Math.floor(ball.ySpeed* 10) / 10}px/s <br>
+                Gravitasjonen = ${Math.floor(ball.yAcceleration* 100) / 100}px/s^2 <br>
+                Høyde = ${Math.floor((ball.yPos - 593)* -10) / 10}px <br>
+                Lengde = ${Math.floor((ball.xPos - 7)* 10) / 10}px <br>
+                `
+        }
+        function collision() {
+            if(ball.yPos > 593 || ball.xPos > 1193 || ball.xPos < 0){
+                ball.ySpeed = 0;
+                ball.xSpeed = 0;
+                ball.yAcceleration = 0;
+                ball.yPos = 593;
+                ball.xPos = 7;
+
+            }
+        }
+        function gameLoop() {
+            collision();
+            draw();
+            info();
+            requestAnimationFrame(gameLoop)
+        }
+        gameLoop()
+
+    </script>
+</body>
+</html>

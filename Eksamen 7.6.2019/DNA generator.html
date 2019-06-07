@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DNA generator</title>
+    <style>
+        body{
+            background-color: #dd2c00;
+        }
+        img {
+            height: 180px;
+            width: 80px;
+        }
+        #DNA {
+            height: 180px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav">
+        <a class="active" href="#">DNA-generator</a>
+        <a href="DNA-generator%20flytdiagram.html">DNA-generator flytdiagram</a>
+        <a href="Skrått%20kast.html">Skrått kast</a>
+    </div>
+    <div class="i">
+        <h2>Lag din egen DNA tråd</h2>
+        <p>Du kan kunn føre inn A/a for Adenin, T/t for Tymin, G/g for Guanin eller C/c for Cytosin</p>
+        <input type="text" placeholder="Putt inn base her" id="inp">
+        <button id="sub">Legg til</button>
+        <button id="random">Tilfeldig DNA tråd</button>
+        <div id="DNA"></div>
+        <button id="reset">Tilbakestill</button>
+    </div>
+    <script>
+        //html referangser
+        const inp = document.getElementById("inp");
+        const DNA = document.getElementById("DNA");
+        const reset = document.getElementById("reset");
+        const sub = document.getElementById("sub");
+        const random = document.getElementById("random");
+
+        //globale variabler
+        let i = 0;
+        let tBase = ["A","T","C","G"];
+
+
+        reset.onclick = function () { //fjerner all html fra DNA
+            DNA.innerHTML = "";
+            i = 0
+        };
+        sub.onclick = function () { //legger til basen
+            base();
+            inp.value = "";
+            i++
+        };
+        random.onclick = function () {
+            for(let x = 0; x<10; x++) {
+                inp.value = tBase[Math.floor(Math.random() * tBase.length)]; //omdefinerer inp til å gi tilfeldig bokstav
+                base();
+                inp.value = ""
+            }
+        };
+        // funksjoner
+        function base() {
+            if(inp.value === "A" || inp.value === "a"){
+                DNA.innerHTML += `<img src="img/A-T.png" style="left: ${i*80}">`;
+            }
+            else if(inp.value === "T" || inp.value === "t" ){
+                DNA.innerHTML += `<img src="img/T-A.png" style="left: ${i*80}">`;
+            }
+            else if(inp.value === "C" || inp.value === "c" ){
+                DNA.innerHTML += `<img src="img/C-G.png" style="left: ${i*80}">`;
+            }
+            else if(inp.value === "G" || inp.value === "g" ){
+                DNA.innerHTML += `<img src="img/G-C.png" style="left: ${i*80}">`;
+            }
+            else{
+                alert("Du kan kunn føre inn T/t, A/a, G/g eller C/c for de foskjellige basene")
+            }
+        }
+
+
+    </script>
+</body>
+</html>
